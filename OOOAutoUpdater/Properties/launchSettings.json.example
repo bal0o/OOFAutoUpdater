@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "OOOAutoUpdater": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "akvTenantId": "AzureKeyVaultTenantID",
+        "email": "user@example.com",
+        "akvClientId": "AzureKeyVaultClientID",
+        "email_user": "usernameforExchangeAuth",
+        "akvSubscriptionId": "AzureKeyVaultSubscriptionID",
+        "akvClientSecret": "AzureKeyVaultClientSecret",
+        "ews_url": "https://www.example.com/EWS/Exchange.asmx"
+      }
+    }
+  }
+}
