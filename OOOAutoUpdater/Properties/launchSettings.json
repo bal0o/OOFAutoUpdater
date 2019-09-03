@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "ConsoleApp1": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "akvTenantId": "d1e13279-7428-4928-9b82-3a29f81b6d9f",
+        "email": "jennielyon-marrian@tc-group.com",
+        "akvClientId": "d304c0d6-47b1-4c6a-8c00-7ff05058f236",
+        "email_user": "jennie.lyon-marrian",
+        "akvSubscriptionId": "697df168-4649-4e69-b029-329a91748cc2",
+        "akvClientSecret": "fbc962e0-634e-457e-a1b1-521faf99ca79",
+        "ews_url": "https://mobilemail.itfarm.co.uk/EWS/Exchange.asmx"
+      }
+    }
+  }
+}
