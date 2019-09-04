@@ -9,8 +9,12 @@
         "email_user": "usernameforExchangeAuth",
         "akvSubscriptionId": "AzureKeyVaultSubscriptionID",
         "akvClientSecret": "AzureKeyVaultClientSecret",
-        "ews_url": "https://www.example.com/EWS/Exchange.asmx"
+        "ews_url": "https://www.example.com/EWS/Exchange.asmx",
+        "akvName": "https://<mykeyvaultname>.vault.azure.net/secrets/",
+        "akvSecret": "AzureKeyVaultSecretName"
       }
     }
   }
 }
+
+// When configured as a webjob Azure these settings added as Application settings in the configuration of the App Service. 

@@ -84,8 +84,8 @@ namespace UpdateOOO
             string clientSecret = Environment.GetEnvironmentVariable("akvClientSecret");
             string tenantId = Environment.GetEnvironmentVariable("akvTenantId");
             string subscriptionId = Environment.GetEnvironmentVariable("akvSubscriptionId");
-            string kvURL = "https://msdnkeyvault.vault.azure.net/secrets/";
-            string secretName = "JenEmail";
+            string kvURL = Environment.GetEnvironmentVariable("akvName");
+            string secretName = Environment.GetEnvironmentVariable("akvSecret");
             AzureCredentials credentials = SdkContext.AzureCredentialsFactory.FromServicePrincipal(clientId, clientSecret, tenantId, AzureEnvironment.AzureGlobalCloud).WithDefaultSubscription(subscriptionId);
             var keyClient = new KeyVaultClient(async (authority, resource, scope) =>
             {
@@ -127,24 +127,12 @@ namespace UpdateOOO
 
         public static TimeWindow getDuration(TimeSpan starttime, TimeSpan endtime, int days)
         {
-            TimeWindow duration;
-            var info = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
-            DateTimeOffset localServerTime = DateTimeOffset.Now;
-            bool isDaylightSaving = info.IsDaylightSavingTime(localServerTime);
-            TimeSpan dstremove = new TimeSpan(1, 0, 0);
-            DateTime dt = DateTime.UtcNow.Date;
+            TimeWindow duration;            
+            DateTime dt = DateTime.Today;
             DateTime startdate, enddate, datetomorrow;
             startdate = dt.Add(starttime);
-            if (isDaylightSaving)
-            {
-                startdate = startdate.Subtract(dstremove);
-            }
             datetomorrow = dt.AddDays(days);
-            enddate = datetomorrow.Add(endtime);
-            if (isDaylightSaving)
-            {
-                enddate = enddate.Subtract(dstremove);
-            }
+            enddate = datetomorrow.Add(endtime);            
             duration = new TimeWindow(startdate, enddate);
             return duration;
         }
