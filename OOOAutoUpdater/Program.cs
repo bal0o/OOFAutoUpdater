@@ -24,7 +24,7 @@ namespace UpdateOOO
             TimeWindow duration;
             Boolean SetOOF;
             TimeSpan starttime, endtime;
-            DateTime dt = DateTime.UtcNow.Date;
+            DateTime dt = DateTime.Today;
             switch (dt.DayOfWeek)
             {
                 case DayOfWeek.Monday:
